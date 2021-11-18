@@ -33,8 +33,10 @@
                     if (this.readyState == 4 && this.status == 200)
                     {
                         console.log(this.responseText)
+                        document.getElementById("outputid1").value='';
+                        document.getElementById("outputid1").value=this.responseText;
                     }
                     };
-                    xhttp.open("GET", "senddatatoserver.java?inputdate="+ inputdate +"& holiday="+ holiday +"& nod="+ nod, true);
+                    xhttp.open("POST", "http://localhost:8080/starttojava/holiday?inputdate="+ inputdate +"&holiday="+ holiday +"&nod="+ nod, true);
                     xhttp.send();
                 }
